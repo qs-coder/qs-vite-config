@@ -1,0 +1,69 @@
+{
+  "name": "@qs-coder/qs-vite-config",
+  "version": "0.0.0",
+  "description": "Qingshi vitejs config for vue project",
+  "author": "qs-coder <chenpenglei000@gmail.com>",
+  "license": "ISC",
+  "repository": "git@github.com:qs-coder/qs-vite-config.git",
+  "keywords": [
+    "qingshi",
+    "qs-coder",
+    "vite",
+    "vite-config",
+    "vitejs",
+    "vue"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs"
+    }
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "clean": "pnpm rimraf .turbo node_modules dist",
+    "lint": "pnpm eslint .",
+    "build": "tsup",
+    "publish-pkg": "pnpm -r publish --access public",
+    "release": "bumpp --commit --push --tag && pnpm publish-pkg"
+  },
+  "dependencies": {
+    "dayjs": "^1.11.7",
+    "vite": "^4.3.8"
+  },
+  "devDependencies": {
+    "@intlify/unplugin-vue-i18n": "^0.10.0",
+    "@qs-coder/eslint-config": "^1.0.5",
+    "@qs-coder/ts-config": "^1.0.0",
+    "@types/fs-extra": "^11.0.1",
+    "@vitejs/plugin-vue": "^4.2.3",
+    "@vitejs/plugin-vue-jsx": "^3.0.1",
+    "@vue-macros/short-vmodel": "^1.2.6",
+    "@vue-macros/volar": "^0.9.8",
+    "bumpp": "^9.1.0",
+    "dotenv": "^16.0.3",
+    "fs-extra": "^11.1.1",
+    "picocolors": "^1.0.0",
+    "pkg-types": "^1.0.3",
+    "rollup-plugin-visualizer": "^5.9.0",
+    "tsup": "^6.7.0",
+    "unocss": "^0.52.0",
+    "unplugin-auto-import": "^0.16.1",
+    "unplugin-icons": "^0.16.1",
+    "unplugin-vue-components": "^0.24.1",
+    "unplugin-vue-define-options": "^1.3.5",
+    "unplugin-vue-macros": "^2.1.7",
+    "vite-plugin-compression": "^0.5.1",
+    "vite-plugin-dts": "^2.3.0",
+    "vite-plugin-html": "^3.2.0",
+    "vite-plugin-mock": "^3.0.0",
+    "vite-plugin-pwa": "^0.15.0",
+    "vite-plugin-svg-icons": "^2.0.1"
+  }
+}
