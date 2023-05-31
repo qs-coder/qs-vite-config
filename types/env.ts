@@ -50,12 +50,14 @@ export interface ImportMetaEnv extends ImportGlobalMetaEnv {
   readonly VITE_ENABLE_ANALYZE?: boolean
   /** 是否开启打包压缩 */
   readonly VITE_ENABLE_COMPRESS?: boolean
+  /** 是否应用PWA */
+  readonly VITE_ENABLE_PWA?: boolean
+  /** 是否是部署的vercel */
+  readonly VITE_ENABLE_VERCEL?: boolean
   /** 压缩方式类型 */
   readonly VITE_BUILD_COMPRESS?: 'gzip' | 'brotli' | 'deflate' | 'deflateRaw' | 'none'
   /** 使用压缩时是否删除原始文件 */
   readonly VITE_BUILD_COMPRESS_DELETE_ORIGIN_FILE?: boolean
   /** hash路由模式 */
   readonly VITE_HASH_ROUTE?: boolean
-  /** 是否是部署的vercel */
-  readonly VITE_VERCEL?: boolean
 }

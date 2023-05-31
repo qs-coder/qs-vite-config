@@ -23,6 +23,8 @@ function defineApplicationConfig(defineApplicationConfig: DefineApplicationConfi
     const define = createDefineData(pkgJson)
     const plugins = await createPlugins({ root, pkg: pkgJson, env, isBuild: command === 'build' })
     const css = createCssOptions(root, pkgJson)
+
+    const dropConsole = env.VITE_GLOB_DROP_CONSOLE ?? true
     const applicationConfig: UserConfig = {
       resolve: {
         alias: [
@@ -45,6 +47,9 @@ function defineApplicationConfig(defineApplicationConfig: DefineApplicationConfi
       define,
       plugins,
       css,
+      esbuild: {
+        drop: dropConsole ? ['console', 'debugger'] : undefined,
+      },
     }
 
     const mergedConfig = mergeConfig(commonConfig, applicationConfig)

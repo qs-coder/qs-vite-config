@@ -19,13 +19,14 @@ async function createPlugins({ root, pkg, env, isBuild }: ApplicationPluginsOpti
   vitePlugins.push(configHtmlPlugin(isBuild))
 
   // vite-plugin-pwa
-  vitePlugins.push(configPwaPlugin(pkg))
-
+  if (env.VITE_ENABLE_PWA || env.VITE_ENABLE_VERCEL) {
+    vitePlugins.push(configPwaPlugin(pkg))
+  }
   // The following plugins only work in the production environment
   if (isBuild && env.VITE_ENABLE_COMPRESS) {
     // rollup-plugin-gzip
     vitePlugins.push(
-      configCompressPlugin(env.VITE_BUILD_COMPRESS || 'none', env.VITE_BUILD_COMPRESS_DELETE_ORIGIN_FILE),
+      configCompressPlugin(env.VITE_BUILD_COMPRESS || 'gzip', env.VITE_BUILD_COMPRESS_DELETE_ORIGIN_FILE),
     )
   }
 
