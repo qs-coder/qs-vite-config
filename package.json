@@ -1,6 +1,6 @@
 {
   "name": "@qs-coder/qs-vite-config",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Qingshi vitejs config for vue project",
   "author": "qs-coder <chenpenglei000@gmail.com>",
   "license": "ISC",
