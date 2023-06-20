@@ -1,6 +1,6 @@
 {
   "name": "@qs-coder/vite-config",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Qingshi vitejs config for vue project",
   "author": "qs-coder <chenpenglei000@gmail.com>",
   "license": "ISC",
@@ -20,12 +20,13 @@
       "import": "./dist/index.mjs"
     }
   },
-  "main": "./dist/index.js",
-  "module": "./dist/index.mjs",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "files": [
     "dist"
   ],
+  "type": "module",
   "scripts": {
     "clean": "pnpm rimraf .turbo node_modules dist",
     "lint": "pnpm eslint .",
