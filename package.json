@@ -65,6 +65,7 @@
     "vite-plugin-dts": "^2.3.0",
     "vite-plugin-html": "^3.2.0",
     "vite-plugin-mock": "^3.0.0",
+    "vite-plugin-progress": "^0.0.7",
     "vite-plugin-pwa": "^0.15.0",
     "vite-plugin-svg-icons": "^2.0.1",
     "vite-plugin-vue-devtools": "^0.2.1",

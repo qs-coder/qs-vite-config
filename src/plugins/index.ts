@@ -5,12 +5,14 @@ import { configCompressPlugin } from './compress'
 import { configHtmlPlugin } from './html'
 import { configMockPlugin } from './mock'
 import { configPwaPlugin } from './pwa'
+import { configPlugins } from './plugin'
 import { configUnplugins } from './unplugin'
 import { configUnoPlugin } from './uno'
 import { configVisualizerConfig } from './visualizer'
 
 async function createPlugins({ root, pkg, env, isBuild }: ApplicationPluginsOptions) {
-  const vitePlugins: (PluginOption | PluginOption[])[] = configUnplugins({ root, env, pkg, isBuild })
+  const vitePlugins: (PluginOption | PluginOption[])[]
+    = configPlugins({ root, env, pkg, isBuild }).concat(configUnplugins({ root, env, pkg, isBuild }))
 
   const appConfigPlugin = await createAppConfigPlugin({ pkg, isBuild } as ApplicationPluginsOptions)
   vitePlugins.push(appConfigPlugin)
