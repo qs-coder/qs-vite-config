@@ -3,7 +3,11 @@
   "extends": "@qs-coder/ts-config/node.json",
   "compilerOptions": {
     "baseUrl": "./",
+    "module": "ESNext",
+    "target": "ESNext",
     "moduleResolution": "bundler",
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
     "paths": {
       "@/*": [
         "./src/*"
@@ -20,8 +24,10 @@
       "./types"
     ],
     "types": [
-      "unplugin-vue-macros/macros-global",
-      "unplugin-vue-define-options/macros-global"
+      "vite/client",
+      "vue/ref-macros",
+      "vite-plugin-pwa/client",
+      "unplugin-vue-macros/macros-global"
     ]
   },
   "vueCompilerOptions": {

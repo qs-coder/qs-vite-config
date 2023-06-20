@@ -5,6 +5,8 @@ import { FileSystemIconLoader } from 'unplugin-icons/loaders'
 import IconsResolver from 'unplugin-icons/resolver'
 import Icons from 'unplugin-icons/vite'
 import Components from 'unplugin-vue-components/vite'
+import VueSetupExtend from 'vite-plugin-vue-setup-extend'
+import VueDevtools from 'vite-plugin-vue-devtools'
 import VueMacros from 'unplugin-vue-macros/vite'
 import { transformShortVmodel } from '@vue-macros/short-vmodel'
 import type { PluginOption } from 'vite'
@@ -24,6 +26,8 @@ export function configUnplugins({ env, pkg, isBuild = false }: ApplicationPlugin
   const collectionName = VITE_ICON_LOCAL_PREFIX.replace(`${VITE_ICON_PREFIX}-`, '')
 
   return [
+    VueDevtools(),
+    VueSetupExtend(),
     DefineOptions(),
     VueMacros({
       plugins: {
